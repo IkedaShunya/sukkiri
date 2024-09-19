@@ -1,0 +1,19 @@
+package sukkiri.lesson06.practice03.comment;
+
+
+public class Kouhan {
+	
+	public static void callDeae() {
+		System.out.println("えぇい、こしゃくな。くせ者だ！であえい！");
+	}
+	
+	public static void showMondokoro() throws Exception{
+		System.out.println("飛車さん、角さん。もういいでしょう。");
+		Thread.sleep(3000L);
+		
+		System.out.println("この紋章が目には入らぬか!");
+		Zennhan.doTogame();
+	}
+
+
+}
