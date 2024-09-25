@@ -16,7 +16,9 @@ public class Main {
 		
 		System.out.println(prefs.keySet());
 		
+		//
 		//keySet()メソッドでキーの一覧を取得
+		
 		for(String key : prefs.keySet()) {
 			//get（）メソッドでキーに対しての値を取得
 			int value = prefs.get(key);
