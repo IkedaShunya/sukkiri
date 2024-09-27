@@ -19,12 +19,14 @@ public class Cleric {
 		Random rand = new Random();
 		int plus = rand.nextInt(3);
 		
-		this.mp += (sec+plus);
-		if(this.MAXMP < this.mp) {
-			this.mp = this.MAXMP;
-		}
+		int recover = (sec+plus);
 		
-		return this.mp;
+		int actually_recover =Math.min(this.MAXHP-this.hp, recover);
+		
+		
+		this.mp -= actually_recover; 
+		
+		return actually_recover;
 	}
 
 }
