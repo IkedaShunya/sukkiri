@@ -1,8 +1,10 @@
 package sukkiri.lesson09.sample03;
 
 public class Main {
-
+//staticなし、インスタンスメソッドインスタンスを作らないと呼び出せない
+	//static クラスに付随するメソッド　インタンス化せずに使える(インスタンスを付けなくてもよい)
 	public static void main(String[] args) {
+		
 		Hero h1 = new Hero();
 		h1.name = "ミナト";
 		h1.hp = 100;
@@ -15,6 +17,8 @@ public class Main {
 		w.heal(h1);
 		w.heal(h2);
 		w.heal(h2);
+		Wizard.aaa();
+		w.aaa();
 
 	}
 

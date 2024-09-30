@@ -1,3 +1,4 @@
+
 package sukkiri.lesson09.sample03;
 
 public class Wizard {
@@ -7,6 +8,10 @@ public class Wizard {
 	public void heal(Hero h) {
 		h.hp += 10;
 		System.out.println(h.name + "のHPを10回復した!");
+	}
+	
+	public static void aaa() {
+		
 	}
 
 }
