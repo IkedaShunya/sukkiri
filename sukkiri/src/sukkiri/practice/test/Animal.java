@@ -1,4 +1,4 @@
-package src.sukkiri.practice.test;
+package sukkiri.practice.test;
 
 public class Animal {
     private String name;

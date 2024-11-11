@@ -1,6 +1,8 @@
-package src.sukkiri.practice.test;
+package sukkiri.practice.test;
 
 import java.util.ArrayList;
+
+import file_operation.practice_print06.CsvOperation;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,9 +19,9 @@ public class Main {
         }
 
         //書き出しを行うファイル名の指定
-        String fileName = "test.txt";
+        String writeFileName = "test.txt";
         //書き出し処理の実施。
-        int count =csvOperation.CsvFileWriter(animals, "test.txt");
+        int count =csvOperation.CsvFileWriter(animals, writeFileName);
         if(count ==0){
             System.out.println("書き込みできませんでした");
         }else{
@@ -30,7 +32,7 @@ public class Main {
 
         //↑で書き出したファイルの内容を表示
         animals.clear();
-        animals =csvOperation.CsvFileReader("test.txt");
+        animals =csvOperation.CsvFileSet(writeFileName);
         for(Animal animal:animals){
             animal.show();
         }

@@ -1,10 +1,20 @@
-package src.sukkiri.practice.test;
+package file_operation.practice_print06;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+
+import sukkiri.practice.test.Animal;
 
 public class CsvOperation {
     private final String filepath ;
+	//private String filepath ;
+	private String readFilePath;
+	private String writeFilePath;
+  
 
 
     /**
@@ -12,7 +22,8 @@ public class CsvOperation {
      * 処理内容：filePath(処理ファイル)に値をセット
      */
     public CsvOperation(){
-        this.filepath = "/Users/ikedashunya/Documents/sukkiri/file/AnimalData.txt" ;
+        this.filepath = "file\\" ;
+      
     }
 
     /**
@@ -21,7 +32,8 @@ public class CsvOperation {
      * @return　ArrayList<Animal>aniamals　動物情報のリスト（1行ごとのテキストの内容）
      */
     public ArrayList<Animal> CsvFileSet(){
-        return CsvFileReader(this.filepath);
+    	readFilePath = filepath + "AnimalData.txt";
+        return CsvFileReader(readFilePath);
         
     }
 
@@ -32,7 +44,7 @@ public class CsvOperation {
      * @return　ArrayList<Animal>aniamals　動物情報のリスト（1行ごとのテキストの内容）
      */
     public ArrayList<Animal> CsvFileSet(String fileName){
-        String readFilePath = "/Users/ikedashunya/Documents/sukkiri/file2/" + fileName;
+        readFilePath = filepath + fileName;
         return CsvFileReader(readFilePath);
 
     }
@@ -67,13 +79,13 @@ public class CsvOperation {
      * @param fileName　ファイル名
      * @return　count 書き込みを行った回数（書き込みがおこなわれなかった場合は0）
      */
-    public  int CsvFileWriter(ArrayList<Animal> animals, String fileName) {
+    public  int CsvFileWriter(ArrayList<Animal> animals, String writeFileName) {
         int count =0;
 
         // 書き込むファイルを指定
-        String writeFilepath = "/Users/ikedashunya/Documents/sukkiri/file2/" + fileName;
+        writeFilePath = filepath + writeFileName;
         // try-with-resources 文を使ってファイルを開く
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(writeFilepath));) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(writeFilePath));) {
             // 書き込みを繰り返す
             for (Animal animal :animals) {
                 bw.write(animal.getName()+"," + animal.getKind()+"," + animal.getAge()); // ファイルに書き込み
